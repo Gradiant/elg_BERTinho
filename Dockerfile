@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-
-
 RUN apt-get update -y \
     && apt-get install -y python3-pip python3-dev \
     && rm -rf /var/lib/apt/lists/*
@@ -22,3 +20,6 @@ WORKDIR /bertinho/
 COPY ./ /bertinho/
 
 CMD ["python3", "serve.py"]
+RUN ["python3", "-c", "from init_model import Initializer; Initializer()"]
+
+ENV TRANSFORMERS_OFFLINE=1

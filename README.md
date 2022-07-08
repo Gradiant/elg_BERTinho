@@ -17,14 +17,13 @@ source docker-build.sh
 
 ## Run
 ```
-docker run --rm -p 0.0.0.0:8866:8866 --name bertinho elg_bertinho
+docker run --rm -p 0.0.0.0:8866:8866 --name bertinho elg_bertinho:1.0.1
 ```
 
 ## Use
 
 ```
     curl -X POST http://0.0.0.0:8866/predict_bertinho -H 'Content-Type: application/json' -d '{"type": "text","content":"Onte fumos buscar unha nova freidora ao [MASK] do pobo."}'
-
 ```
 
 
